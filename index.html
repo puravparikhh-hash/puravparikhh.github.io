@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101618">
+<meta name="description" content="Purav Parikh's engineering portfolio. Explore embedded systems projects, custom PCs, EV testing, and community leadership.">
+<title>Purav Parikh | Engineering Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <a href="#about" class="wordmark" aria-label="Purav Parikh, profile"><span class="mark" aria-hidden="true">P</span> PURAV’S WORKBENCH</a>
+  <span class="top-title">ENGINEERING 1 · McMASTER</span>
+  <a class="linkedin" href="https://www.linkedin.com/in/puravpar/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+</header>
+<div class="phone-status" aria-hidden="true"><span>▴▴▴ &nbsp; PP</span><time></time><span>▰</span></div>
+<main class="workspace">
+  <nav class="hardware" aria-label="Portfolio sections">
+    <div class="board-top"><span><i></i> Component map</span><span>ByteForge PCs</span></div>
+    <div class="board">
+      <div class="board-detail" aria-hidden="true"><span></span><span></span><span></span><span></span></div><div class="board-backplane" aria-hidden="true"></div><div class="board-sweep" aria-hidden="true"></div>
+      <a class="part cpu" href="#about" data-section="about"><span class="part-shape" aria-hidden="true"><span class="cpu-package"><span class="cpu-lid"></span></span></span><span class="part-label"><b>CPU</b><small>About</small></span><span class="app-label">About</span></a>
+      <a class="part gpu" href="#projects" data-section="projects"><span class="part-shape" aria-hidden="true"><i></i><i></i><b>GPU</b></span><span class="part-label"><b>GPU</b><small>Projects</small></span><span class="app-label">Projects</span></a>
+      <a class="part ram" href="#skills" data-section="skills"><span class="part-shape" aria-hidden="true"><i></i><i></i></span><span class="part-label"><b>RAM</b><small>Skills</small></span><span class="app-label">Skills</span></a>
+      <a class="part ssd" href="#experience" data-section="experience"><span class="part-shape" aria-hidden="true"><b>NVMe</b><i></i></span><span class="part-label"><b>SSD</b><small>Experience</small></span><span class="app-label">Experience</span></a>
+      <a class="part fan" href="#recognition" data-section="recognition"><span class="part-shape" aria-hidden="true"><i></i></span><span class="part-label"><b>FAN</b><small>Awards</small></span><span class="app-label">Awards</span></a>
+      <a class="part psu" href="#contact" data-section="contact"><span class="part-shape" aria-hidden="true"><b>⏻</b></span><span class="part-label"><b>PSU</b><small>Contact</small></span><span class="app-label">Contact</span></a>
+    </div>
+    <div class="board-bottom"><span id="board-readout">CPU / About</span><span>Click a component to explore <b aria-hidden="true">↗</b></span></div>
+  </nav>
+
+  <div class="phone-intro">
+    <p class="eyebrow">McMaster University · Engineering 1</p>
+    <div class="profile-heading"><h1>Purav<br>Parikh</h1><img class="portrait" src="purav-parikh.png" alt="Portrait of Purav Parikh" width="400" height="400"></div>
+    <p>I build PCs and write code that talks to hardware.</p>
+  </div>
+
+  <div class="screen">
+    <div class="screen-bar"><span><i></i> <span id="screen-title">About</span></span><button type="button" class="home-button" aria-label="Return to home screen">⌂ Home</button><span class="signal" aria-hidden="true">▂▃▅▇</span></div>
+    <div class="screen-body" id="screen-body" tabindex="-1">
+      <section id="about" class="pane">
+        <p class="eyebrow">McMaster University · Engineering 1</p>
+        <div class="profile-heading"><h1>Purav<br>Parikh</h1><img class="portrait" src="purav-parikh.png" alt="Portrait of Purav Parikh" width="400" height="400"></div>
+        <p class="lead">Give me a PC parts list, a flaky wire, or a sensor that keeps firing at the wrong time. That’s the kind of problem I like working through.</p>
+        <p class="about-note">I’m in my first year at McMaster and leaning toward computer engineering. Through ByteForge PCs, I’ve learned to build around what someone actually needs from their machine. On the EV team and in my own ESP32 project, I learned to make design choices I could test and explain.</p>
+        <div class="actions"><a class="primary" href="#projects">See what I’ve built <span aria-hidden="true">↗</span></a><a href="#experience">My experience <span aria-hidden="true">→</span></a></div>
+        <dl class="quick-stats"><div><dt>20+</dt><dd>Custom PCs</dd></div><div><dt>25</dt><dd>EV system tests</dd></div><div><dt>250+</dt><dd>Students taught</dd></div></dl>
+      </section>
+
+      <section id="projects" class="pane" hidden>
+        <p class="eyebrow">GPU / Project archive</p><h2>Projects<span>.</span></h2>
+        <article class="entry featured">
+          <p class="meta">Personal project · Embedded systems</p>
+          <h3>IoT Laundry Status Monitor</h3>
+          <p>A washing machine can pause or shake lightly without being done. I built an external monitor that reads the machine’s vibration and tells me when the cycle actually ends.</p>
+          <ol class="signal-path" aria-label="Laundry monitor signal path">
+            <li><strong>Vibration measurement</strong> <small>MPU-6500 accelerometer</small></li>
+            <li><strong>Cycle-end detection</strong> <small>ESP32 firmware in C++</small></li>
+            <li><strong>Status display and alerts</strong> <small>TFT display and webhook notifications</small></li>
+          </ol>
+          <dl class="case-notes">
+            <div><dt>How I built it</dt><dd>I used an MPU-6500 accelerometer to capture vibration. An ESP-WROOM-32 runs my C++ detection logic, reports status and elapsed time to an onboard TFT, and sends a webhook push notification to my phone at the end of the cycle.</dd></div>
+            <div><dt>What I tested</dt><dd>I adjusted the vibration threshold and time window over 20 test cycles so small background vibrations wouldn’t trigger a false alert. The tuned setup achieved <strong>95% cycle-detection accuracy</strong> in those tests.</dd></div>
+          </dl>
+          <ul class="tags"><li>C++</li><li>ESP32</li><li>MPU-6500</li><li>TFT</li><li>3D printing</li></ul>
+        </article>
+        <article class="entry">
+          <p class="meta">Team project · University of Waterloo Electric Vehicle Challenge</p>
+          <h3>Getting a competition EV to the track</h3>
+          <p>My work spanned battery selection, electrical troubleshooting, mechanical assembly, and testing.</p>
+          <dl class="case-notes">
+            <div><dt>Battery trade-off</dt><dd>I compared conventional lithium-ion with lower-cost lithium iron phosphate cells. I weighed capacity, weight, and compatibility with the vehicle and selected the lithium-ion pack.</dd></div>
+            <div><dt>System checks</dt><dd>I designed a multistep validation plan and carried out <strong>25 tests</strong> across software, electrical, and other vehicle systems. I found loose wiring before the vehicle ran and repaired it by soldering.</dd></div>
+            <div><dt>Track result</dt><dd>I helped assemble the vehicle, documented design decisions and test results, and incorporated feedback from industry mentors. Our team completed every competition track run.</dd></div>
+          </dl>
+        </article>
+        <article class="entry">
+          <p class="meta">Client work · Founder, ByteForge PCs</p>
+          <h3>20+ custom PCs built to client budgets</h3>
+          <p>I start by asking how a client will use the machine and what they’re comfortable spending. That gives me a basis for recommending parts and assembling a PC around their priorities while staying within budget.</p>
+          <dl class="case-notes">
+            <div><dt>Build operations</dt><dd>I used Notion and Google Sheets to track parts, costs, and revenue across builds and keep orders on schedule. I also built the ByteForge website to show completed systems and share client reviews.</dd></div>
+          </dl>
+        </article>
+      </section>
+
+      <section id="experience" class="pane" hidden>
+        <p class="eyebrow">SSD / Experience and education</p><h2>Experience<span>.</span></h2>
+        <article class="entry"><p class="meta">Mar 2025 – Present</p><h3>Founder · ByteForge PCs</h3><p>Built 20+ custom PCs, recommended parts based on client needs, and ran build scheduling, cost tracking, and the business website.</p></article>
+        <article class="entry"><p class="meta">May 2025 – Jul 2026 · Halton District School Board</p><h3>Coding Instructor · South Milton Hackcup</h3><p>I taught Python fundamentals to <strong>250+ elementary students across 10+ schools</strong>, adjusting the pace and breaking lessons into steps for each age group and skill level.</p><p>At our week-long hackathon for <strong>500+ participants</strong>, I handled logistics with 50 volunteers and five staff and presented Python lessons as a speaker.</p></article>
+        <article class="entry"><p class="meta">Sep 2023 – Nov 2025 · University of Waterloo competition</p><h3>Team Member · Electric Vehicle Challenge</h3><p>Contributed to battery selection, mechanical assembly, cross-system testing, repairs, and documentation.</p><a href="#projects">Read the project details →</a></article>
+        <article class="entry"><p class="meta">Aug 2023 – Aug 2026</p><h3>Vice President, Treasurer &amp; Camp Counsellor</h3><p><strong>Sanatan Mandir Cultural Centre.</strong> Over three years, I helped organize festivals, community events, and youth programs serving close to <strong>1,000 attendees</strong>. I co-led about 300 volunteers and coordinated setup, registration, crowd flow, and cleanup.</p><p>As treasurer, I divided a roughly <strong>$30,000 budget</strong> among subteams and tracked expenses in Google Sheets.</p></article>
+        <article class="entry"><p class="meta">Sep 2026 – Apr 2030 (expected) · Hamilton, ON</p><h3>McMaster University · Bachelor of Engineering</h3><p>Engineering 1. I’m exploring hardware and computer engineering as I decide where to specialize.</p><a href="https://www.linkedin.com/posts/puravpar_mcmaster-engineering-mcmasterengineering-activity-7466902658809905152-s3CA" target="_blank" rel="noopener noreferrer">McMaster announcement ↗</a></article>
+      </section>
+
+      <section id="skills" class="pane" hidden>
+        <p class="eyebrow">RAM / Skills</p><h2>Skills<span>.</span></h2>
+        <article class="entry"><h3>Hardware &amp; prototyping</h3><p>I’ve applied component selection to 20+ client PCs, system testing and soldering to a competition EV, and microcontroller programming to an IoT prototype.</p><ul class="tags"><li>ESP32 / microcontrollers</li><li>Soldering</li><li>CAD</li><li>3D printing</li><li>PC component selection</li><li>System testing</li></ul></article>
+        <article class="entry"><h3>Programming &amp; tools</h3><p>I wrote C++ for ESP32 sensor processing, taught Python to elementary students, and used Notion and Sheets to track build schedules and expenses.</p><ul class="tags"><li>C++</li><li>Python</li><li>Prompt engineering</li><li>Notion</li><li>Google Sheets</li></ul></article>
+        <article class="entry"><h3>Working with others</h3><p>I’ve explained programming to beginners, documented test results for a competition team, and coordinated volunteers and staff at events with hundreds of participants.</p><ul class="tags"><li>Communication</li><li>Leadership</li><li>Public speaking</li><li>Project planning</li><li>Teamwork</li></ul></article>
+      </section>
+
+      <section id="recognition" class="pane" hidden>
+        <p class="eyebrow">FAN / Recognition</p><h2>Awards<span>.</span></h2>
+        <article class="entry award"><span>02</span><div><p class="meta">December 2024</p><h3>2nd place · Halton Game Jam</h3><p>Hackathon.</p></div></article>
+        <article class="entry award"><span>05</span><div><p class="meta">May 2026</p><h3>5th place · Regional math competition</h3><p>Halton District School Board.</p></div></article>
+      </section>
+
+      <section id="contact" class="pane" hidden>
+        <p class="eyebrow">PSU / Contact</p><h2>Let’s connect<span>.</span></h2>
+        <p class="lead">I’m based in Milton, Ontario, and study in Hamilton. Reach out if you’d like to talk about a project, a student design team, or an engineering opportunity.</p>
+        <div class="actions"><a class="primary" href="mailto:puravparikhh@gmail.com">Email me <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/puravpar/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div>
+      </section>
+    </div>
+  </div>
+  <div class="phone-dock" aria-label="Quick links"><a href="#projects"><span aria-hidden="true">◇</span>Projects</a><a href="#experience"><span aria-hidden="true">▤</span>Experience</a><a href="#contact"><span aria-hidden="true">✉</span>Contact</a><a href="https://www.linkedin.com/in/puravpar/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">in</span>LinkedIn</a></div>
+</main>
+<footer class="footer"><span>© <span id="year">2026</span> Purav Parikh</span><span>Milton / Hamilton, Ontario</span></footer>
+</body>
+</html>
